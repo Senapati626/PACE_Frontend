@@ -1,0 +1,118 @@
+.footer-container{
+   display: flex;
+   column-gap: 1rem;
+   row-gap: 5rem;
+   padding: 0.5em 1.5em 0 1.5em;
+   color: var(--color-white);
+   align-items: center;
+   border-top: 1px solid #c8c8ff;
+}
+.footer-container div{
+    height: 320px;
+}
+.footer-left{
+    width: 20%;
+    display: flex;
+    align-items: flex-end;
+    padding: 1em 2em;
+}
+.footer-right{
+    border: none;
+    padding: 1em 2em;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer-links{
+    display: flex;
+    list-style:square;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.footer-links li a{
+    text-decoration: none;
+    color: var(--color-white);
+    white-space: nowrap;
+    font-family: 'Oswald',sans-serif;
+}
+.footer-links li a:hover{
+    color: #c8c8ff;
+}
+.footer-newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1em 2em;
+    gap: 20px;
+    width: 40%;
+}
+.footer-newsletter form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-newsletter form input[type="text"],.footer-newsletter form input[type="email"]{
+    padding: 10px 8px;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #161616;
+    color: gray;
+}
+.footer-newsletter form input[type="submit"]{
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5em;
+    text-transform: uppercase;
+    background-color: #c8c8ff;
+}
+.footer-newsletter-head{
+    font-size: 25px;
+    font-weight: 600;
+}
+.footer-right-header{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 30px;
+    background: #11C2CF;
+    background: linear-gradient(to right, #90ebf2 0%, #f88cf1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.footer-right-follow{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.footer-right-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.footer-right-list li img{
+    filter: grayscale();
+}
+
+@media screen and (max-width:700px) {
+    .footer-container{
+        flex-wrap: wrap;
+    }
+    .footer-newsletter{
+        border: none;
+        width: 70%;
+    }
+    .footer-right{
+        border: none;
+    }
+}

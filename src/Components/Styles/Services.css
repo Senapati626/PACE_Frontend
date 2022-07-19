@@ -1,0 +1,26 @@
+.service-container{
+    min-height: 92vh;
+    color: silver;
+    padding: 60px 40px;
+}
+.service-header{
+    font-size: 24px;
+    color: #a4a2a2;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.service-table{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 18px;
+    font-family: 'Oswald';
+}
+.service-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 30px;
+    color: antiquewhite;
+    list-style:square;
+}

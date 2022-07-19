@@ -1,0 +1,41 @@
+.samples-container{
+    min-height: 92vh;
+    padding: 60px 30px;
+}
+.samples-header{
+    color: silver;
+    font-size: 24px;
+    text-align: center;
+}
+
+.samples-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 50px 0;
+}
+.sample-card{
+    display: flex;
+    color: silver;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 2px solid #c8c8ff;
+    font-size: 22px;
+    max-width: 786px;
+    font-family: 'Oswald', sans-serif;
+}
+.terms-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 2em;
+    font-size: 20px;
+    margin-bottom: 50px;
+    color:darkgrey;
+    font-family: 'Oswald',sans-serif;
+    max-width: 1200px;
+}

@@ -1,0 +1,94 @@
+import React,{useState} from "react";
+import './Styles/ActionForm.css';
+import axios from "axios";
+
+const MailingForm = ()=>{
+    const [sent, setSent] = useState(false)
+    const [givenName, setGivenName] = useState("")
+    const [surName, setSurName] = useState("")
+    const [email,setEmail] = useState("")
+    const [contact,setContact] = useState("")
+    const [titleOfAssignment,setTitleOfAssignment] = useState("")
+    const [description,setDescription] =useState("")
+    const [deadline,setDeadline] = useState("")
+    const [selectedFile,setSelectedFile] = React.useState(null);
+
+    const handleFileSelect = (e)=>{
+        setSelectedFile(e.target.files[0])
+        console.log(e.target.files[0])
+    }
+    const handleSend = async(event)=>{
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append("selectedFile",selectedFile)
+        try{
+            await axios.post("http://localhost:4000/send_mail",{
+                given_name: givenName,
+                surname: surName,
+                email: email,
+                contact_no: contact,
+                title_of_assignment: titleOfAssignment,
+                assignment_description: description,
+                deadline: deadline,
+                document: selectedFile
+            })
+            // const response = await axios({
+            //     method: "post",
+            //     url: "http://localhost:4000/send_mail",
+            //     data: formData,
+            //     headers: {"Content-Type": "multipart/form-data"}
+            // })
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+    return(
+        <div>
+            <div className="mailing-form-container">
+                <form onSubmit={handleSend}>
+                    <div className="mailing-form-row row-top">
+                    <div className="mailing-form-input-wrapper">
+                        <label htmlFor="given_name">Given Name<span style={{color:"red"}}> *</span></label>
+                        <input type="text" id="given_name" placeholder="Given Name" onChange={(e)=>setGivenName(e.target.value)} required name="given_name"/>
+                    </div>
+                    <div className="mailing-form-input-wrapper">
+                        <label htmlFor="surname">Surname<span style={{color:"red"}}> *</span></label>
+                        <input type="text" id="surname" placeholder="Surname" onChange={(e)=>setSurName(e.target.value)} required/>
+                    </div>
+                    </div>
+                    <div className="mailing-form-row">
+                        <label htmlFor="email">Email Address<span style={{color:"red"}}> *</span></label>
+                        <input type="email" id="email" placeholder="E.g- abc@gmail.com" onChange={(e)=>setEmail(e.target.value)} required/>
+                    </div>
+                    <div className="mailing-form-row">
+                        <label htmlFor="contact">Contact Number<span style={{color:"red"}}> *</span></label>
+                        <input type="number" id="contact" placeholder="Contact Number" onChange={(e)=>setContact(e.target.value)} required/>
+                    </div>
+                    <div className="mailing-form-row">
+                        <label htmlFor="title">Title of Assignment<span style={{color:"red"}}> *</span></label>
+                        <input type="text" id="title" placeholder="Title of Assignment" onChange={(e)=>setTitleOfAssignment(e.target.value)} required/>
+                    </div>
+                    <div className="mailing-form-row">
+                        <label htmlFor="description">Short Description of Assignment<span style={{color:"red"}}> *</span></label>
+                        <input type="text" id="description" placeholder="Short Description" onChange={(e)=>setDescription(e.target.value)} required/>
+                    </div>
+                    <div className="mailing-form-row">
+                        <label htmlFor="deadline">Deadline<span style={{color:"red"}}> *</span></label>
+                        <input type="date" id="deadline" onChange={(e)=>setDeadline(e.target.value)} required/>
+                    </div>
+                    <div className="mailing-form-row">
+                        <label htmlFor="document" className="file-input">{'Upload relevant file (Optional)'}</label>
+                        <input type="file" name="document" id="document" accept=".pdf,.doc,.docx,.jpg,.png" onChange={handleFileSelect}/>
+                    </div>
+                    <div className="mailing-form-row row-end">
+                        <button type="submit" className="mailing-form-btn">Submit</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    )
+}
+
+export default MailingForm;
