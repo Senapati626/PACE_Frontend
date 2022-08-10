@@ -18,6 +18,7 @@ export default function TermsAndServices(){
             </ol>
             <div>
                 <p className="service-header"><strong>Lets make some money together.</strong></p>
+                <p style={{color:"gray",marginTop:"-50px",textAlign:"center"}}>{'Ping us on WhatsApp.'}</p>
             </div>
         </div>
     )

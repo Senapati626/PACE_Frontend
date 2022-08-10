@@ -1,94 +1,40 @@
-import React from "react";
+import React,{useState,useRef,useEffect} from "react";
 import './Styles/Testimonials.css';
-import MidA from './Assets/testimonials/Landscape 1.jpeg';
-import ShortA from './Assets/testimonials/Landscape 2.jpeg';
-import ShortB from './Assets/testimonials/Landscape 3.jpeg';
-import MidB from './Assets/testimonials/Landscape 4.jpeg';
-import ShortestA from './Assets/testimonials/Landscape 5.jpeg';
-import ShortestB from './Assets/testimonials/Landscape 6.jpeg';
-import MidC from './Assets/testimonials/Landscape 7.jpeg';
-import ShortC from './Assets/testimonials/Landscape 8.jpeg';
-import MidD from './Assets/testimonials/Landscape 9.jpeg';
-import ShorterA from './Assets/testimonials/Landscape 10.jpeg';
-import TallA from './Assets/testimonials/Landscape 11.jpeg';
-import TallB from './Assets/testimonials/Landscape 12.jpeg';
-import ShortD from './Assets/testimonials/Landscape 13.jpeg';
-import ShorterB from './Assets/testimonials/Landscape 14.jpeg';
-import TallC from './Assets/testimonials/Landscape 15.jpeg';
-import TallD from './Assets/testimonials/Portrait 1.jpeg';
-import TallestA from './Assets/testimonials/Portrait 2.jpeg';
-import TallerA from './Assets/testimonials/Portrait 3.jpeg';
-import TallerB from './Assets/testimonials/Portrait 4.jpeg';
-import TallestB from './Assets/testimonials/Portrait 5.jpeg';
-import TallE from './Assets/testimonials/Portrait 6.jpeg';
+import images400 from './testimonies/testimony400';
+import images600 from './testimonies/testimony600';
+
 
 export default function Testimonials(){
+    const [currImg400,setCurrImg400] = useState(images400[0])
+    const [currImg600,setCurrImg600] = useState(images600[0])
+    const currentEle = useRef();
+
     return(
         <div className="tml-container">
-            <div className="tml-grid-container">
-                <grid-item mid>
-                <img src={MidA} alt="testimony"/>
-                </grid-item>
-                <grid-item short>
-                <img src={ShortA} alt="testimony"/>
-                </grid-item>
-                <grid-item short>
-                <img src={ShortB} alt="testimony"/>
-                </grid-item>
-                <grid-item mid>
-                <img src={MidB} alt="testimony"/>
-                </grid-item>
-                <grid-item shortest>
-                <img src={ShortestA} alt="testimony"/>
-                </grid-item>
-                <grid-item tall>
-                <img src={TallA} alt="testimony"/>
-                </grid-item>
-                <grid-item shortest>
-                <img src={ShortestB} alt="testimony"/>
-                </grid-item>
-                <grid-item mid>
-                <img src={MidC} alt="testimony"/>
-                </grid-item>
-                <grid-item short>
-                <img src={ShortC} alt="testimony"/>
-                </grid-item>
-                <grid-item mid>
-                <img src={MidD} alt="testimony"/>
-                </grid-item>
-                <grid-item shorter>
-                <img src={ShorterA} alt="testimony"/>
-                </grid-item>
-                <grid-item tall>
-                <img src={TallB} alt="testimony"/>
-                </grid-item>
-                <grid-item short>
-                <img src={ShortD} alt="testimony"/>
-                </grid-item>
-                <grid-item shorter>
-                <img src={ShorterB} alt="testimony"/>
-                </grid-item>
-                <grid-item tall>
-                <img src={TallC} alt="testimony"/>
-                </grid-item>
-                <grid-item tall>
-                <img src={TallD} alt="testimony"/>
-                </grid-item>
-                <grid-item tallest>
-                <img src={TallestA} alt="testimony"/>
-                </grid-item>
-                <grid-item taller>
-                <img src={TallerA} alt="testimony"/>
-                </grid-item>
-                <grid-item taller>
-                <img src={TallerB} alt="testimony"/>
-                </grid-item>
-                <grid-item tallest>
-                <img src={TallestB} alt="testimony"/>
-                </grid-item>
-                <grid-item tall>
-                <img src={TallE} alt="testimony"/>
-                </grid-item>
+            <h2 className="tml-header">{'Have a glimpse at the kind of work we do'}</h2>
+            <div className="tml-active-a">
+                <img src={currImg400} alt="" ref={currentEle} className="tml-animate" id="currentImg"/>
+            </div>
+            <div className="tml-slide">
+                {images400.map((image,index)=>{
+                    return(
+                        <div className={currImg400===image ? "tml-slide-img-a img-active" : "tml-slide-img-a"} key={index}>
+                            <img src={image} alt="" onClick={()=>setCurrImg400(image)}/>
+                        </div>
+                    )
+                })}
+            </div>
+            <div className="tml-active-b">
+                <img src={currImg600} alt="" ref={currentEle} className="tml-animate" id="currentImg"/>
+            </div>
+            <div className="tml-slide">
+                {images600.map((image,index)=>{
+                    return(
+                        <div className={currImg600===image ? "tml-slide-img-b img-active" : "tml-slide-img-b"} key={index}>
+                            <img src={image} alt="" onClick={()=>setCurrImg600(image)}/>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Services from './Components/Services';
 import WhatsApp from './Components/Assets/whatsapp.png';
 import TermsAndServices from './Components/T&S';
+import FAQs from './Components/Faq';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
             <Route path='/testimonials' element={<Testimonials/>}/>
             <Route path='/services' element={<Services/>}/>
             <Route path='/termsofservice' element={<TermsAndServices/>}/>
+            <Route path='/faqs' element={<FAQs/>}/>
           </Routes>
         <Footer/>
         <div className='footer-bottom'>

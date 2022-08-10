@@ -15,7 +15,9 @@
   padding-top: 1em;
   color: var(--color-white);
   text-align: center;
-  margin-bottom: -30px;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
 }
 .wa-link{
   position: sticky;
@@ -91,4 +93,9 @@
     transform: translateY(0);
   }
 
+}
+@media screen and (max-width:600px) {
+  .footer-bottom{
+    font-size: 12px;
+  }
 }

@@ -46,35 +46,35 @@ const MailingForm = ()=>{
     return(
         <div>
             <div className="mailing-form-container">
-                <form onSubmit={handleSend}>
+                <form onSubmit={handleSend} className="mailing-form">
                     <div className="mailing-form-row row-top">
                     <div className="mailing-form-input-wrapper">
-                        <label htmlFor="given_name">Given Name<span style={{color:"red"}}> *</span></label>
+                        <label htmlFor="given_name">Given Name<span style={{color:"slateblue"}}> *</span></label>
                         <input type="text" id="given_name" placeholder="Given Name" onChange={(e)=>setGivenName(e.target.value)} required name="given_name"/>
                     </div>
                     <div className="mailing-form-input-wrapper">
-                        <label htmlFor="surname">Surname<span style={{color:"red"}}> *</span></label>
+                        <label htmlFor="surname">Surname<span style={{color:"slateblue"}}> *</span></label>
                         <input type="text" id="surname" placeholder="Surname" onChange={(e)=>setSurName(e.target.value)} required/>
                     </div>
                     </div>
                     <div className="mailing-form-row">
-                        <label htmlFor="email">Email Address<span style={{color:"red"}}> *</span></label>
+                        <label htmlFor="email">Email Address<span style={{color:"slateblue"}}> *</span></label>
                         <input type="email" id="email" placeholder="E.g- abc@gmail.com" onChange={(e)=>setEmail(e.target.value)} required/>
                     </div>
                     <div className="mailing-form-row">
-                        <label htmlFor="contact">Contact Number<span style={{color:"red"}}> *</span></label>
+                        <label htmlFor="contact">Contact Number<span style={{color:"slateblue"}}> *</span></label>
                         <input type="number" id="contact" placeholder="Contact Number" onChange={(e)=>setContact(e.target.value)} required/>
                     </div>
                     <div className="mailing-form-row">
-                        <label htmlFor="title">Title of Assignment<span style={{color:"red"}}> *</span></label>
+                        <label htmlFor="title">Title of Assignment<span style={{color:"slateblue"}}> *</span></label>
                         <input type="text" id="title" placeholder="Title of Assignment" onChange={(e)=>setTitleOfAssignment(e.target.value)} required/>
                     </div>
                     <div className="mailing-form-row">
-                        <label htmlFor="description">Short Description of Assignment<span style={{color:"red"}}> *</span></label>
+                        <label htmlFor="description">Short Description of Assignment<span style={{color:"slateblue"}}> *</span></label>
                         <input type="text" id="description" placeholder="Short Description" onChange={(e)=>setDescription(e.target.value)} required/>
                     </div>
                     <div className="mailing-form-row">
-                        <label htmlFor="deadline">Deadline<span style={{color:"red"}}> *</span></label>
+                        <label htmlFor="deadline">Deadline<span style={{color:"slateblue"}}> *</span></label>
                         <input type="date" id="deadline" onChange={(e)=>setDeadline(e.target.value)} required/>
                     </div>
                     <div className="mailing-form-row">

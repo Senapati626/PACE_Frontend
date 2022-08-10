@@ -39,3 +39,28 @@
     font-family: 'Oswald',sans-serif;
     max-width: 1200px;
 }
+.faq-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.faq-wrapper{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.faq-block{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.faq-q{
+    color: #c8c8ff;
+    font-size: 22px;
+    font-family: 'Oswald',sans-serif;
+}
+.faq-a{
+    color: silver;
+}

@@ -6,6 +6,7 @@
    color: var(--color-white);
    align-items: center;
    border-top: 1px solid #c8c8ff;
+   margin-bottom: 30px;
 }
 .footer-container div{
     height: 320px;
@@ -108,11 +109,31 @@
     .footer-container{
         flex-wrap: wrap;
     }
+    .footer-container div{
+        height: 200px;
+    }
+    .footer-left{
+        width: 30%;
+    }
     .footer-newsletter{
         border: none;
-        width: 70%;
+        width: 60%;
+    }
+    .footer-newsletter-head{
+        font-size: 16px;
     }
     .footer-right{
+        width: 100%;
         border: none;
     }
+    .footer-right-header{
+        font-size: 20px;
+    }
+    .footer-links,.footer-right-follow,.footer-right-address,.footer-right-list,.footer-newsletter form input[type="text"],.footer-newsletter form input[type="email"],.footer-newsletter form input[type="submit"]{
+        font-size: 14px;
+    }
+    .footer-newsletter form input[type="text"],.footer-newsletter form input[type="email"]{
+        padding: 5px;
+    }
+
 }
