@@ -10,8 +10,20 @@ import WhatsApp from './Components/Assets/whatsapp.png';
 import TermsAndServices from './Components/T&S';
 import Aboutus from './Components/AboutUs';
 import FAQs from './Components/Faq';
+import Loader from './Components/Loader';
+import React,{useState,useEffect} from 'react';
 function App() {
+  const [load,setLoad] = useState(false)
+
+  useEffect(()=>{
+    setLoad(true);
+    setTimeout(()=>{
+      setLoad(false)
+    },3000)
+  },[])
   return (
+    <div>
+    {load ? <Loader/> :
     <div className="App">
       <Router>
         <Navbar/>
@@ -32,6 +44,7 @@ function App() {
           <img src={WhatsApp} alt="Chat on WhatsApp" className="wa-icon"/>
         </a>
       </Router>
+    </div>}
     </div>
   );
 }

@@ -27,19 +27,19 @@ export default function Clock(){
             <div className="clock-compass">
                 <IconContext.Provider value={{className: 'compass-icons'}}>
                 <div className="clock-compass-marks">
-                    <MdOutlineAssignment onClick={()=>setItemactive("assignment")}></MdOutlineAssignment>
+                    <MdOutlineAssignment onClick={()=>{setItemactive("assignment"); setPromptactive(false)}}></MdOutlineAssignment>
                     <span>{'Assignments'}</span>
                 </div>
                 <div className="clock-compass-marks">
-                    <MdOutlineComputer onClick={()=>setItemactive("test")}></MdOutlineComputer>
+                    <MdOutlineComputer onClick={()=>{setItemactive("test"); setPromptactive(false)}}></MdOutlineComputer>
                     <span>{'Online Tests'}</span>
                 </div>
                 <div className="clock-compass-marks">
-                    <MdOutlineQuiz onClick={()=>setItemactive("quiz")}></MdOutlineQuiz>
+                    <MdOutlineQuiz onClick={()=>{setItemactive("quiz");setPromptactive(false)}}></MdOutlineQuiz>
                     <span>{'Quiz Assessments'}</span>
                 </div>
                 <div className="clock-compass-marks">
-                    <BsJournalBookmark onClick={()=>setItemactive("project")}></BsJournalBookmark>
+                    <BsJournalBookmark onClick={()=>{setItemactive("project");setPromptactive(false)}}></BsJournalBookmark>
                     <span>{'Dissertations'}</span>
                 </div>
                 </IconContext.Provider>
