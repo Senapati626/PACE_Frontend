@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Services from './Components/Services';
 import WhatsApp from './Components/Assets/whatsapp.png';
 import TermsAndServices from './Components/T&S';
+import Aboutus from './Components/AboutUs';
 import FAQs from './Components/Faq';
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Navbar/>
           <Routes>
             <Route path='/' exact element={<Home/>}/>
+            <Route path='/about-us' element={<Aboutus/>}/>
             <Route path='/samples' element={<Samples/>}/>
             <Route path='/testimonials' element={<Testimonials/>}/>
             <Route path='/services' element={<Services/>}/>

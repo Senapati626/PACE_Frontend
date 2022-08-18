@@ -4,8 +4,9 @@
 }
 .samples-header{
     color: silver;
-    font-size: 24px;
+    font-size: 36px;
     text-align: center;
+    font-weight: 500;
 }
 
 .samples-list{
@@ -33,23 +34,25 @@
     flex-direction: column;
     gap: 15px;
     padding: 0 2em;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 50px;
     color:darkgrey;
-    font-family: 'Oswald',sans-serif;
+    font-weight: 500;
     max-width: 1200px;
 }
 .faq-container{
     width: 100%;
     display: flex;
     justify-content: center;
+    padding: 60px 30px;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 .faq-wrapper{
     width: 100%;
-    max-width: 1000px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
 }
 .faq-block{
     display: flex;
@@ -58,9 +61,112 @@
 }
 .faq-q{
     color: #c8c8ff;
-    font-size: 22px;
+    font-size: 20px;
     font-family: 'Oswald',sans-serif;
 }
 .faq-a{
     color: silver;
+}
+.expert-img{
+    max-width: 560px;
+    width: 100%;
+}
+.expert-txt-container{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+}
+.expert-txt{
+    max-width: 560px;
+    color: silver;
+    font-size: 20px;
+}
+.expert-section{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 60px 30px;
+}
+.expert-link{
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    align-items: center;
+    text-decoration: none;
+    background-color: #111155;
+    padding: 0.25em 1em;
+    font-weight: 500;
+    color: whitesmoke;
+    align-self: center;
+    border-radius: 10px;
+}
+.expert-link img{
+    width: 50px;
+}
+.aboutus-section{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+}
+.aboutus-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 60px 20px;
+    gap: 2rem;
+}
+.aboutus-header{
+    background: #11C2CF;
+    background: linear-gradient(to right, #90ebf2 0%, #f88cf1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 52px;
+    font-weight: 500;
+}
+.aboutus-header2{
+    color: silver;
+    font-size: 36px;
+    text-align: center;
+}
+.aboutus-section img{
+    width: 100%;
+}
+.aboutus-section2{
+    display: flex;
+    gap: 20px;
+    color: silver;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+.aboutus-section2 img{
+    width: 100%;
+}
+.aboutus-section2 div{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+@media only screen and (min-width:560px){
+    .faq-a{
+        font-size: 18px;
+    }
+    .faq-q{
+        font-size: 24px;
+    }
+    .expert-link{
+        align-self: flex-start;
+    }
 }

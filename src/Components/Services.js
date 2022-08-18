@@ -4,7 +4,7 @@ export default function Services(){
     return(
         <div className="service-container">
             <div>
-                <p className="service-header">{'Trusted by students from over 100 universities'}</p>
+                <p className="service-header">{'Trusted by students from over 500 universities'}</p>
             </div>
             <div className="service-table">
                 <ul className="service-row">

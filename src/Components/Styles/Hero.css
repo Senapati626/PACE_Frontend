@@ -1,884 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap');
 .hero-container{
-    color: gray;
-    min-height: 92vh;
+    height: 92vh;
+    color: aliceblue;
     position: relative;
-    display: grid;
-    place-items: center;
+    overflow:hidden;
 }
-.hero-compass-wrapper-la{
+
+.hero-blob{
+    width: 500px;
+    height: 500px;
     position: absolute;
-    border-radius: 50%;
-    width: 650px;
-    height: 650px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    transition-delay: 2s;
-    transition: all 0.4s linear;
-    background: linear-gradient(225deg, #060910, #05070e);
-    box-shadow:  -15px 15px 30px #030408,
-                 15px -15px 30px #090c16;
+    background-color: #14172b;
+    animation: blob 10s infinite alternate;
+    z-index: 0;
+    transition: all 0.5s ease;
 }
-.hero-compass-wrapper-sm{
-    background: linear-gradient(225deg, #060910, #05070e);
-    position: absolute;
-    border-radius: 50%;
-    width: 650px;
-    height: 650px;
-    top: -200px;
-    right: -200px;
-    transform: scale(0.25);
-    transition-delay: 0.8s;
-    transition: all 0.4s linear;
-    pointer-events: none;
-    box-shadow:  -15px 15px 30px #030408,
-    15px -15px 30px #090c16;
-}
-/* 
- sm -> width,height,top,right
- la -> width,height
- compass-marks -> left,right,bottom,top
- compass-needle -> up
- compass-needle-a,b -> border-bottom
-*/
-.hero-compass{
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: linear-gradient(225deg, #060910, #05070e);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: grid;
-    place-items: center;
-}
-.hero-compass-marks{
-    width: 80px;
-    height: 80px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 2;
-}
-.hero-compass-marks:hover{
-    -webkit-animation: flicker-5 5s linear both;
-    animation: flicker-5 5s linear both;
-    border: 5px solid #f5e58b;
-}
-.hero-compass-marks:hover .compass-icons{
-    color: #f5e58b;
-}
-.hero-compass-marks:nth-child(1){
-    position: absolute;
-    top: 20px;
-    left: 265px;
-}
-.hero-compass-marks:nth-child(2){
-    position: absolute;
-    top: 265px;
-    left: 20px;
-}
-.hero-compass-marks:nth-child(3){
-    position: absolute;
-    bottom: 20px;
-    left: 265px;
-}
-.hero-compass-marks:nth-child(4){
-    position: absolute;
-    top: 265px;
-    right: 20px;
-}
-.compass-icons{
-    color: #c8c8ff;
-    font-size: 50px;
-}
-.hero-compass-needle-default{
-    height: 560px;
-    width: 20px;
-    padding: 5px 0;
-    box-sizing:border-box;
-  transform: rotate(20deg);
-	animation: spin 4.0s alternate;
-	-ms-transform: rotate(20deg);
-	-o-transform: rotate(20deg);
-	-o-animation: spin 4.0s alternate;
-	-moz-transform: rotate(20deg);
-	-moz-animation: spin 4.0s alternate;
-	-webkit-transform: rotate(20deg);
-	-webkit-animation: spin 4.0s alternate;
-}
-.hero-compass-needle-up{
-    height: 560px;
-    width: 20px;
-    padding: 5px 0;
-    box-sizing: border-box;
-    transform: rotate(0deg);
-    transition: transform 0.4s linear;
-}
-.hero-compass-needle-left{
-    height: 560px;
-    width: 20px;
-    padding: 5px 0;
-    box-sizing: border-box;
-    transform: rotate(-90deg);
-    transition: transform 0.4s linear;
-}
-.hero-compass-needle-right{
-    height: 560px;
-    width: 20px;
-    padding: 5px 0;
-    box-sizing: border-box;
-    transform: rotate(90deg);
-    transition: transform 0.4s linear;
-}
-.hero-compass-needle-down{
-    height: 560px;
-    width: 20px;
-    padding: 5px 0;
-    box-sizing: border-box;
-    transform: rotate(180deg);
-    transition: transform 0.4s linear;
-}
-.hero-compass-needle-a{
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 275px solid #ef5052;
-    position: relative;
-}
-.hero-compass-needle-b{
-    -webkit-transform: rotate(180deg); /* Safari and Chrome */
-	width: 0; 
-  transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-	height: 0;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-bottom: 275px solid #F3F3F3;
-	position: relative;
-}
-.smol-inactive{
-    display: none;
-    pointer-events: none;
-}
-.smol-active{
-    background-color: #ef5052;
+.hero-blob-container{
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 2;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    pointer-events: all;
-}
-.hero-card{
-    width: 400px;
-    height: 480px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    border-radius: 10px;
-    -webkit-animation: puff-in 0.7s linear both;
-    animation: puff-in 0.7s linear both;
-    gap: 10px;
-    background: #06080f;
-    transform-origin: center;
-    font-family: 'Oswald',sans-serif;
-    box-shadow: inset 19px 19px 38px #030407,
-                inset -19px -19px 38px #090c17;
-}
-.hero-card-img{
-    width: 100%;
-    display: grid;
-    place-items: center;
-}
-.hero-card-img img{
-    width: 320px;
-}
-.hero-card-header{
-    text-align: center;
-    font-size: 28px;
-}
-.hero-card-txt{
-    color: #c8c8ff;
-}
-.card-hide{
-    display: none;
+    top: 0;
+    left: 0;
     pointer-events: none;
 }
-@keyframes spin {
-    0%{
-        transform:scale(1) rotate(0deg);
-    }
-	25% {
-		transform:scale(1) rotate(80deg);
-	}
-    75%{
-        transform:scale(1) rotate(-180deg);
-    }
-	100% {
-		transform:scale(1) rotate(20deg);
-	}
+.hero-wrapper{
+    width: 100%;
+    min-height: 92vh;
+    backdrop-filter: blur(30px);
+    position: relative;
+    z-index: 2;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero-txt{
+    font-size: 96px;
+    font-weight: 500;
+    color: #c0c8ff;
 }
 
-@-o-keyframes spin {
-    0%{
-        -webkit-transform:scale(1) rotate(0deg);
-    }
-	25% {
-		transform:scale(1) rotate(80deg);
-	}
-    75%{
-        transform:scale(1) rotate(-180deg);
-    }
-	100% {
-		transform:scale(1) rotate(20deg);
-	}
+.hero-row-sm{
+    width: 300px;
+    margin: 20px 0;
+    position: absolute;
+    right: 30px;
+    top:77%;
+    padding: 20px;
+    color: #b8a5a5;
+    font-size: 18px;
+    transition: transform 0.5s linear;
+}
+.hero-row-sm:hover{
+    transform: scale(1.25);
 }
 
-@-moz-keyframes spin {
-    0%{
-        -webkit-transform:scale(1) rotate(0deg);
-    }
-	25% {
-		transform:scale(1) rotate(80deg);
-	}
-    75%{
-        transform:scale(1) rotate(-180deg);
-    }
-	100% {
-		transform:scale(1) rotate(20deg);
-	}
+.hero-span{
+    position: relative;
+}
+.hero-span span{
+    height: 5px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    transition: width 0.4s linear;
+}
+.hero-span:hover span{
+    width: 100%;
 }
 
-@-webkit-keyframes spin {
-    0%{
-        -webkit-transform:scale(1) rotate(0deg);
-    }
-	25% {
-		transform:scale(1) rotate(80deg);
-	}
-    75%{
-        transform:scale(1) rotate(-180deg);
-    }
-	100% {
-		transform:scale(1) rotate(20deg);
-	}
-}
-
-/* ----------------------------------------------
- * Generated by Animista on 2022-8-10 20:47:56
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/* ----------------------------------------------
- * Generated by Animista on 2022-8-10 20:49:31
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/**
- * ----------------------------------------
- * animation flicker-5
- * ----------------------------------------
- */
- @-webkit-keyframes flicker-5 {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    0% {
-      opacity: 1;
-    }
-    1% {
-      opacity: 1;
-    }
-    1.02% {
-      opacity: 1;
-    }
-    8.98% {
-      opacity: 1;
-    }
-    9% {
-      opacity: 0;
-    }
-    9.8% {
-      opacity: 0;
-    }
-    9.82% {
-      opacity: 1;
-    }
-    9.48% {
-      opacity: 1;
-    }
-    9.5% {
-      opacity: 1;
-    }
-    9.6% {
-      opacity: 1;
-    }
-    9.62% {
-      opacity: 1;
-    }
-    14.98% {
-      opacity: 1;
-    }
-    15% {
-      opacity: 0.5;
-    }
-    15.8% {
-      opacity: 0.5;
-    }
-    15.82% {
-      opacity: 1;
-    }
-    15.18% {
-      opacity: 1;
-    }
-    15.2% {
-      opacity: 0.7;
-    }
-    16% {
-      opacity: 0.7;
-    }
-    16.02% {
-      opacity: 1;
-    }
-    15.48% {
-      opacity: 1;
-    }
-    15.5% {
-      opacity: 0.5;
-    }
-    16.2% {
-      opacity: 0.5;
-    }
-    16.22% {
-      opacity: 1;
-    }
-    16.98% {
-      opacity: 1;
-    }
-    17% {
-      opacity: 1;
-    }
-    17.8% {
-      opacity: 1;
-    }
-    17.82% {
-      opacity: 1;
-    }
-    20.48% {
-      opacity: 1;
-    }
-    20.5% {
-      opacity: 0.9;
-    }
-    21.3% {
-      opacity: 0.9;
-    }
-    21.32% {
-      opacity: 1;
-    }
-    20.98% {
-      opacity: 1;
-    }
-    21% {
-      opacity: 1;
-    }
-    22% {
-      opacity: 1;
-    }
-    22.02% {
-      opacity: 1;
-    }
-    39.98% {
-      opacity: 1;
-    }
-    40% {
-      opacity: 1;
-    }
-    41% {
-      opacity: 1;
-    }
-    41.02% {
-      opacity: 1;
-    }
-    40.48% {
-      opacity: 1;
-    }
-    40.5% {
-      opacity: 0.6;
-    }
-    41.4% {
-      opacity: 0.6;
-    }
-    41.42% {
-      opacity: 1;
-    }
-    41.98% {
-      opacity: 1;
-    }
-    42% {
-      opacity: 1;
-    }
-    42.8% {
-      opacity: 1;
-    }
-    42.82% {
-      opacity: 1;
-    }
-    59.98% {
-      opacity: 1;
-    }
-    60% {
-      opacity: 1;
-    }
-    61% {
-      opacity: 1;
-    }
-    61.02% {
-      opacity: 1;
-    }
-    60.18% {
-      opacity: 1;
-    }
-    60.2% {
-      opacity: 0.2;
-    }
-    61% {
-      opacity: 0.2;
-    }
-    61.02% {
-      opacity: 1;
-    }
-    60.78% {
-      opacity: 1;
-    }
-    60.8% {
-      opacity: 0.4;
-    }
-    61.6% {
-      opacity: 0.4;
-    }
-    61.62% {
-      opacity: 1;
-    }
-    61.38% {
-      opacity: 1;
-    }
-    61.4% {
-      opacity: 0;
-    }
-    62.2% {
-      opacity: 0;
-    }
-    62.22% {
-      opacity: 1;
-    }
-    61.78% {
-      opacity: 1;
-    }
-    61.8% {
-      opacity: 1;
-    }
-    62.8% {
-      opacity: 1;
-    }
-    62.82% {
-      opacity: 1;
-    }
-    75.98% {
-      opacity: 1;
-    }
-    76% {
-      opacity: 1;
-    }
-    77% {
-      opacity: 1;
-    }
-    77.02% {
-      opacity: 1;
-    }
-    77.98% {
-      opacity: 1;
-    }
-    78% {
-      opacity: 0.7;
-    }
-    78.8% {
-      opacity: 0.7;
-    }
-    78.82% {
-      opacity: 1;
-    }
-    78.98% {
-      opacity: 1;
-    }
-    79% {
-      opacity: 1;
-    }
-    80% {
-      opacity: 1;
-    }
-    80.02% {
-      opacity: 1;
-    }
-    99.98% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-    }
-    101% {
-      opacity: 1;
-    }
-    101.02% {
-      opacity: 1;
-    }
-  }
-  @keyframes flicker-5 {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    0% {
-      opacity: 1;
-    }
-    1% {
-      opacity: 1;
-    }
-    1.02% {
-      opacity: 1;
-    }
-    8.98% {
-      opacity: 1;
-    }
-    9% {
-      opacity: 0;
-    }
-    9.8% {
-      opacity: 0;
-    }
-    9.82% {
-      opacity: 1;
-    }
-    9.48% {
-      opacity: 1;
-    }
-    9.5% {
-      opacity: 1;
-    }
-    9.6% {
-      opacity: 1;
-    }
-    9.62% {
-      opacity: 1;
-    }
-    14.98% {
-      opacity: 1;
-    }
-    15% {
-      opacity: 0.5;
-    }
-    15.8% {
-      opacity: 0.5;
-    }
-    15.82% {
-      opacity: 1;
-    }
-    15.18% {
-      opacity: 1;
-    }
-    15.2% {
-      opacity: 0.7;
-    }
-    16% {
-      opacity: 0.7;
-    }
-    16.02% {
-      opacity: 1;
-    }
-    15.48% {
-      opacity: 1;
-    }
-    15.5% {
-      opacity: 0.5;
-    }
-    16.2% {
-      opacity: 0.5;
-    }
-    16.22% {
-      opacity: 1;
-    }
-    16.98% {
-      opacity: 1;
-    }
-    17% {
-      opacity: 1;
-    }
-    17.8% {
-      opacity: 1;
-    }
-    17.82% {
-      opacity: 1;
-    }
-    20.48% {
-      opacity: 1;
-    }
-    20.5% {
-      opacity: 0.9;
-    }
-    21.3% {
-      opacity: 0.9;
-    }
-    21.32% {
-      opacity: 1;
-    }
-    20.98% {
-      opacity: 1;
-    }
-    21% {
-      opacity: 1;
-    }
-    22% {
-      opacity: 1;
-    }
-    22.02% {
-      opacity: 1;
-    }
-    39.98% {
-      opacity: 1;
-    }
-    40% {
-      opacity: 1;
-    }
-    41% {
-      opacity: 1;
-    }
-    41.02% {
-      opacity: 1;
-    }
-    40.48% {
-      opacity: 1;
-    }
-    40.5% {
-      opacity: 0.6;
-    }
-    41.4% {
-      opacity: 0.6;
-    }
-    41.42% {
-      opacity: 1;
-    }
-    41.98% {
-      opacity: 1;
-    }
-    42% {
-      opacity: 1;
-    }
-    42.8% {
-      opacity: 1;
-    }
-    42.82% {
-      opacity: 1;
-    }
-    59.98% {
-      opacity: 1;
-    }
-    60% {
-      opacity: 1;
-    }
-    61% {
-      opacity: 1;
-    }
-    61.02% {
-      opacity: 1;
-    }
-    60.18% {
-      opacity: 1;
-    }
-    60.2% {
-      opacity: 0.2;
-    }
-    61% {
-      opacity: 0.2;
-    }
-    61.02% {
-      opacity: 1;
-    }
-    60.78% {
-      opacity: 1;
-    }
-    60.8% {
-      opacity: 0.4;
-    }
-    61.6% {
-      opacity: 0.4;
-    }
-    61.62% {
-      opacity: 1;
-    }
-    61.38% {
-      opacity: 1;
-    }
-    61.4% {
-      opacity: 0;
-    }
-    62.2% {
-      opacity: 0;
-    }
-    62.22% {
-      opacity: 1;
-    }
-    61.78% {
-      opacity: 1;
-    }
-    61.8% {
-      opacity: 1;
-    }
-    62.8% {
-      opacity: 1;
-    }
-    62.82% {
-      opacity: 1;
-    }
-    75.98% {
-      opacity: 1;
-    }
-    76% {
-      opacity: 1;
-    }
-    77% {
-      opacity: 1;
-    }
-    77.02% {
-      opacity: 1;
-    }
-    77.98% {
-      opacity: 1;
-    }
-    78% {
-      opacity: 0.7;
-    }
-    78.8% {
-      opacity: 0.7;
-    }
-    78.82% {
-      opacity: 1;
-    }
-    78.98% {
-      opacity: 1;
-    }
-    79% {
-      opacity: 1;
-    }
-    80% {
-      opacity: 1;
-    }
-    80.02% {
-      opacity: 1;
-    }
-    99.98% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-    }
-    101% {
-      opacity: 1;
-    }
-    101.02% {
-      opacity: 1;
-    }
-  }
-
-@keyframes puff-in{
-    0%{
-        transform: scale(2);
-        
-    }
-    50%{
-        transform: scale(1.5);
-    }
-    100%{
-        transform: scale(1);
+@media only screen and (max-width:719px){
+    .hero-txt{
+        font-size: 48px;
+        text-align: center;
+    }
+    .hero-wrapper{
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-row-sm{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+    .hero-blob-container{
+        display: grid;
+        place-items: center;
+    }
+    .hero-blob{
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
     }
 }
-/* 
- sm -> width,height,top,right
- la -> width,height
- compass-marks -> left,right,bottom,top
- compass-needle -> up
- compass-needle-a,b -> border-bottom
-*/
-/* ----------------------------------------------
- * Generated by Animista on 2022-8-10 22:29:13
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-
-@media only screen and (max-width:720px) {
-    .hero-compass-wrapper-sm{
-        width: 320px;
-        height: 320px;
-        right: -100px;
-        top: -100px;
-    }
-    .hero-compass-wrapper-la{
-        width: 320px;
-        height: 320px;
-    }
-    .hero-compass{
-        width: 300px;
-        height: 300px;
-    }
-    .hero-compass-marks{
-        width: 60px;
-        height: 60px;
-    }
-    .hero-compass-marks:nth-child(1){
-        left: 115px;
-    }
-    .hero-compass-marks:nth-child(2){
-        top: 115px;
-    }
-    .hero-compass-marks:nth-child(3){
-        left: 115px;
-    }
-    .hero-compass-marks:nth-child(4){
-        top: 115px;
-    }
-    .compass-icons{
+@media only screen and (max-width:470px) {
+    .hero-txt{
         font-size: 36px;
     }
-    .hero-compass-needle-default,.hero-compass-needle-down,.hero-compass-needle-left,.hero-compass-needle-up,.hero-compass-needle-right{
-        height: 260px;
+}
+
+
+@keyframes blob{
+    0%{
+        border-radius: 80% 60% 68% 72% / 65% 56%;
     }
-    .hero-compass-needle-a{
-        border-bottom: 125px solid #ef5052;
+    25%{
+        border-radius: 68% 110% 80% 95% / 125% 65%;
     }
-    .hero-compass-needle-b{
-        border-bottom: 125px solid #F3F3F3;
+    50%{
+        border-radius: 120% 80% 115% 85% / 95% 78%;
     }
-    .hero-card{
-        width: 250px;
-        height: 360px;
+    75%{
+        border-radius: 60% 122% 88% 65% / 54% 68%;
     }
-    .hero-card-img img{
-        width: 200px;
-    }
-    .hero-card-txt{
-        font-size: 14px;
+    100%{
+        border-radius: 80% 85% 72% 60% / 75% 65%;
     }
 }

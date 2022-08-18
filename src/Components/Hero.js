@@ -1,86 +1,31 @@
-import React,{useState} from "react";
+import React from "react";
 import './Styles/Hero.css';
-import TestC from './Assets/testcolor.png';
-import AssgnC from './Assets/assignmentcolor.png';
-import DissC from './Assets/dissertationcolor.png';
-import QuizC from './Assets/quizcolor.png';
-import {MdOutlineAssignment} from "react-icons/md";
-import {MdOutlineComputer} from "react-icons/md";
-import {MdOutlineQuiz} from "react-icons/md";
-import {BsJournalBookmark} from "react-icons/bs";
-import { IconContext } from "react-icons";
-
 export default function Hero(){
-    const [itemactive,setItemactive] = useState("default");
-    return(
-        <section className="hero-container">
-            <div className={itemactive==="default" ? "hero-compass-wrapper-la" : "hero-compass-wrapper-sm"}>
-            <div className="hero-compass">
-                <IconContext.Provider value={{className: 'compass-icons'}}>
-                <div className="hero-compass-marks">
-                    <MdOutlineAssignment onClick={()=>setItemactive("assignment")}></MdOutlineAssignment>
+    
+    const mousemoving = (e)=>{
+        const tracker = document.querySelectorAll("#blob")[0];
+        tracker.style.top = `${e.clientY-200}px`;
+        tracker.style.left = `${e.clientX-250}px`;
+    }
+    return (
+        <div className="hero-container" onMouseMove={mousemoving}>
+            <div className="hero-blob-container" id="blob-background">
+                <div className="hero-blob" id="blob"></div>           
+            </div>
+            <div className="hero-wrapper">
+                <div className="hero-row">
+                    <p className="hero-txt">{'we do '}<span className="hero-span" style={{color:"#c04ec0"}}>this<span style={{backgroundColor:"#c04ec0"}}></span></span>{' so'}</p>
                 </div>
-                <div className="hero-compass-marks">
-                    <MdOutlineComputer onClick={()=>setItemactive("test")}></MdOutlineComputer>
+                <div className="hero-row">
+                    <p className="hero-txt">{'that '}<span className="hero-span" style={{color:"#008080"}}>you<span style={{backgroundColor:"#008080"}}></span></span>{' do what'}</p>
                 </div>
-                <div className="hero-compass-marks">
-                    <MdOutlineQuiz onClick={()=>setItemactive("quiz")}></MdOutlineQuiz>
+                <div className="hero-row">
+                    <p className="hero-txt">{'you do '}<span className="hero-span" style={{color: "#d12525"}}>best<span style={{backgroundColor:"#d12525"}}></span></span></p>
                 </div>
-                <div className="hero-compass-marks">
-                    <BsJournalBookmark onClick={()=>setItemactive("project")}></BsJournalBookmark>
-                </div>
-                </IconContext.Provider>
-                <div className={itemactive === "default"? "hero-compass-needle-default" : itemactive === "assignment" ? "hero-compass-needle-up" : itemactive === "test" ? "hero-compass-needle-left" : itemactive === "quiz" ? "hero-compass-needle-down" : itemactive === "project" ? "hero-compass-needle-right" : "hero-compass-needle-default"}>
-                    <div className="hero-compass-needle-a"></div>
-                    <div className="hero-compass-needle-b"></div>
+                <div className="hero-row-sm">
+                    <p>{'Hassle-free and commited assistance to your dissertation, quizzes, assignments and exams.'}</p>
                 </div>
             </div>
-            <div className={itemactive==="default" ? "smol-inactive" : "smol-active"} onClick={()=>setItemactive("default")}></div>
-            </div>
-            <div className={itemactive==="assignment" ? "hero-card" : "card-hide"}>
-                <div className="hero-card-img">
-                    <img src={AssgnC} alt="Assignments"/>
-                </div>
-                <div className="hero-card-header">
-                    <p style={{color:"#7bacd4"}}>{'Assignments'}</p>
-                </div>
-                <div className="hero-card-txt">
-                    <p>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi eu ex bibendum ultrices a sit amet erat. Proin faucibus massa in rutrum auctor.'}</p>
-                </div>
-            </div>
-            <div className={itemactive==="test" ? "hero-card" : "card-hide"}>
-                <div className="hero-card-img">
-                    <img src={TestC} alt="tests"/>
-                </div>
-                <div className="hero-card-header">
-                    <p style={{color:"#a6f8bd"}}>{'Online Tests'}</p>
-                </div>
-                <div className="hero-card-txt">
-                    <p>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi eu ex bibendum ultrices a sit amet erat. Proin faucibus massa in rutrum auctor.'}</p>
-                </div>
-            </div>
-            <div className={itemactive==="quiz" ? "hero-card" : "card-hide"}>
-                <div className="hero-card-img">
-                    <img src={QuizC} alt="Quiz"/>
-                </div>
-                <div className="hero-card-header">
-                    <p style={{color:"#ff725e"}}>{'Online Quizzes'}</p>
-                </div>
-                <div className="hero-card-txt">
-                    <p>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi eu ex bibendum ultrices a sit amet erat. Proin faucibus massa in rutrum auctor.'}</p>
-                </div>
-            </div>
-            <div className={itemactive==="project" ? "hero-card" : "card-hide"}>
-                <div className="hero-card-img">
-                    <img src={DissC} alt="Projects"/>
-                </div>
-                <div className="hero-card-header">
-                    <p style={{color:"#ffc727"}}>{'Dissertations'}</p>
-                </div>
-                <div className="hero-card-txt">
-                    <p>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi eu ex bibendum ultrices a sit amet erat. Proin faucibus massa in rutrum auctor.'}</p>
-                </div>
-            </div>
-        </section>
+        </div>
     )
 }

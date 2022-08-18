@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -9,7 +10,8 @@
 .App{
   position: relative;
   background-color: #06080f;
-  font-family: Helvetica;
+  font-family: 'Space Grotesk',Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 .footer-bottom{
   padding-top: 1em;
@@ -24,6 +26,7 @@
   bottom: 15px;
   left: 100%;
   margin-right: 20px;
+  z-index: 99;
 }
 .wa-icon{
   -webkit-animation: shake-vertical 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;

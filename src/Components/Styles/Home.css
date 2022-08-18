@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 .home-container{
     position: relative;
+    overflow: hidden;
 }
 .home-section{
     display: flex;
@@ -11,7 +12,6 @@
 }
 .form-section{
     flex-wrap: wrap;
-    /* background-image: linear-gradient(to right bottom, #1b1b1c, #1c1c1e, #1c1e21, #1b1f23, #1a2125, #192226, #172226, #162326, #152325, #142324, #132323, #132322); */
 }
 .home-section-txt{
     display: flex;
@@ -25,33 +25,26 @@
     color: #c8c8ff;
     text-transform: capitalize;
     text-align: center;
+    font-weight: 500;
 }
 .home-section-txt-text{
-    font-size: 16px;
+    font-size: 18px;
     max-width: 500px;
     color: var(--color-white);
 }
 
-@keyframes bg-animate{
-    0%{
-        background-size: 400%;
-    }
-    100%{
-        background-size: 100%;
-    }
-}
 
 .choose-section{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 100px 20px;
-    /* background-image: linear-gradient(to right top, #1b1b1c, #1c1c1e, #1c1e21, #1b1f23, #1a2125, #192226, #172226, #162326, #152325, #142324, #132323, #132322); */
 }
 .choose-header{
     font-size: 36px;
     margin-bottom: 2rem;
     color: silver;
+    font-weight: 500;
 }
 .choose-header span{
     color: #c8c8ff;
@@ -77,7 +70,7 @@
     background: linear-gradient(145deg, #05070e, #060910);
     box-shadow:  5px 5px 10px #020306,
              -5px -5px 10px #0a0d18;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 .choose-card:hover{
     box-shadow:  5px 5px 15px #020306,
@@ -116,6 +109,7 @@
     .choose-card{
         width: 280px;
         height: 400px;
+        gap: 0.5em;
     }
     .choose-card-content{
         font-size: 14px;

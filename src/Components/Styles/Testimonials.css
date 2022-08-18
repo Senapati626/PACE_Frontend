@@ -41,16 +41,15 @@
 .tml-slide{
     display: flex;
     flex-wrap: wrap;
-    max-width: 1200px;
-    gap: 20px;
+    max-width: 1000px;
+    gap: 10px;
+    height: 320px;
+    overflow: scroll;
+    padding: 20px;
 }
 .tml-slide-img-a{
-    width: 100px;
-    height: 50px;
-}
-.tml-slide-img-b{
-    width: 50px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
 }
 .tml-slide-img-a img,.tml-slide-img-b img{
     width: 100%;

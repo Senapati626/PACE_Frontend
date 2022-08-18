@@ -1,15 +1,17 @@
 import React from "react";
 import "./Styles/Footer.css";
+import {Link} from "react-router-dom";
+
 export default function Footer(){
     return(
         <div className="footer-container">
             <div className="footer-left">
                 <ul className="footer-links">
-                    <li><a href="/services">{'Services'}</a></li>
-                    <li><a href="/testimonials">{'Testimonials'}</a></li>
-                    <li><a href="/samples">{'Samples'}</a></li>
-                    <li><a href="/services">{'FAQs'}</a></li>
-                    <li><a href="/termsofservice">{'Terms of Service'}</a></li>
+                    <li><Link to="/services">{'Services'}</Link></li>
+                    <li><Link to="/testimonials">{'Testimonials'}</Link></li>
+                    <li><Link to="/samples">{'Samples'}</Link></li>
+                    <li><Link to="/faqs">{'FAQs'}</Link></li>
+                    <li><Link to="/termsofservice">{'Become an Expert'}</Link></li>
                 </ul>
             </div>
             <div className="footer-newsletter">
