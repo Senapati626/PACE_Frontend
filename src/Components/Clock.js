@@ -58,8 +58,8 @@ export default function Clock(){
                     <p style={{color:"#7bacd4"}}>{'Assignments'}</p>
                 </div>
                 <div className="clock-card-txt">
-                    <p>{'Our team manages the assignment and works with in-depth proficiency. The brief, learning outcomes and rubrics will be followe extensively to give relevant and quality work.'}</p><br></br>
-                    <p>{'Check out '}<Link to={"/samples"} style={{textDecoration:"none",color:"#7bacd4"}}>Samples</Link></p>
+                    <p>{'Our team manages the assignment and works with in-depth proficiency. The brief, learning ourcomes and rubrics will be followe extensively to give relevant and quality work.'}</p><br></br>
+                    <p>{'Check our '}<Link to={"/samples"} style={{textDecoration:"none",color:"#7bacd4"}}>Samples</Link></p>
                 </div>
             </div>
             <div className={itemactive==="test" ? "clock-card" : "card-hide"}>
@@ -72,7 +72,7 @@ export default function Clock(){
                 <div className="clock-card-txt">
                     <p>{'Our experts have cracked some of the toughest entrance examinations in the world. Our unique approach, expertise and team work will take care of your exam worries. Send a sample with the date and time of exam and let us take care of it.'}</p>
                     <br></br>
-                    <p>{'Check out '}<Link to={"/samples"} style={{textDecoration:"none",color:"#a6f8bd"}}>Samples</Link></p>
+                    <p>{'Check our '}<Link to={"/samples"} style={{textDecoration:"none",color:"#a6f8bd"}}>Samples</Link></p>
                 </div>
             </div>
             <div className={itemactive==="quiz" ? "clock-card" : "card-hide"}>
@@ -85,7 +85,7 @@ export default function Clock(){
                 <div className="clock-card-txt">
                     <p>{'Our team has over a million hours of quiz taking experience. We know what works to get you through your quizzes. You can see numerous quiz screenshots on our testimonials page.'}</p>
                     <br></br>
-                    <p>{'Check out '}<Link to={"/samples"} style={{textDecoration:"none",color:"#ff725e"}}>Samples</Link></p>
+                    <p>{'Check our '}<Link to={"/samples"} style={{textDecoration:"none",color:"#ff725e"}}>Samples</Link></p>
                 </div>
             </div>
             <div className={itemactive==="project" ? "clock-card" : "card-hide"}>
@@ -98,7 +98,7 @@ export default function Clock(){
                 <div className="clock-card-txt">
                     <p>{'Research Topics, Methodology, Literature survey, large word count, quantitative and qualitative surveys, strict deadlines, numerous feedback form supervisor, development bugs etc worrying you ? Not anymore. Contact us now.'}</p>
                     <br></br>
-                    <p>{'Check out '}<Link to={"/samples"} style={{textDecoration:"none",color:"#ffc727"}}>Samples</Link></p>
+                    <p>{'Check our '}<Link to={"/samples"} style={{textDecoration:"none",color:"#ffc727"}}>Samples</Link></p>
                 </div>
             </div>
             {promptactive ? 

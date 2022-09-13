@@ -42,18 +42,15 @@
 }
 
 .hero-row-sm{
-    width: 300px;
+    width: 350px;
     margin: 20px 0;
     position: absolute;
-    right: 30px;
-    top:77%;
+    right: 40px;
+    top:70%;
     padding: 20px;
     color: #b8a5a5;
-    font-size: 18px;
+    font-size: 22px;
     transition: transform 0.5s linear;
-}
-.hero-row-sm:hover{
-    transform: scale(1.25);
 }
 
 .hero-span{

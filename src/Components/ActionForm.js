@@ -24,20 +24,17 @@ const MailingForm = ()=>{
         try{
             await axios.post("http://localhost:4000/send_mail",{
                 given_name: givenName,
+                email: email
+            })
+            .then(await axios.post("http://localhost:4000/send_mail_admin",{
+                given_name: givenName,
                 surname: surName,
                 email: email,
                 contact_no: contact,
                 title_of_assignment: titleOfAssignment,
                 assignment_description: description,
-                deadline: deadline,
-                document: selectedFile
-            })
-            // const response = await axios({
-            //     method: "post",
-            //     url: "http://localhost:4000/send_mail",
-            //     data: formData,
-            //     headers: {"Content-Type": "multipart/form-data"}
-            // })
+                deadline: deadline
+            }))
         }
         catch(error){
             console.log(error)
