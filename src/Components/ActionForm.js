@@ -22,11 +22,11 @@ const MailingForm = ()=>{
         const formData = new FormData();
         formData.append("selectedFile",selectedFile)
         try{
-            await axios.post("http://localhost:4000/send_mail",{
+            await axios.post("https://pace-akash.herokuapp.com/send_mail",{
                 given_name: givenName,
                 email: email
             })
-            .then(await axios.post("http://localhost:4000/send_mail_admin",{
+            .then(await axios.post("https://pace-akash.herokuapp.com/send_mail_admin",{
                 given_name: givenName,
                 surname: surName,
                 email: email,
