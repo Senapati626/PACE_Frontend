@@ -107,7 +107,7 @@ export default function Clock(){
                     <img src={Parrot} alt=""/>
                 </div>
                 <div className="clock-prompt-content">
-                    <p><strong>{'Hi, Khatikk here.'}</strong></p>
+                    <p><strong>{'Hi, Nancy here.'}</strong></p>
                     <p>{'Click on the markings in the compass to check the kind of work we do.'}</p>
                     <button className="clock-prompt-btn" onClick={()=>setPromptactive(false)}>{'Okay'}</button>
                 </div>

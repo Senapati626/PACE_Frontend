@@ -3,7 +3,7 @@ import './Styles/ActionForm.css';
 import axios from "axios";
 
 const MailingForm = ()=>{
-    const [sent, setSent] = useState(false)
+    const [sent, setSent] = useState(2)
     const [givenName, setGivenName] = useState("")
     const [surName, setSurName] = useState("")
     const [email,setEmail] = useState("")
@@ -11,22 +11,19 @@ const MailingForm = ()=>{
     const [titleOfAssignment,setTitleOfAssignment] = useState("")
     const [description,setDescription] =useState("")
     const [deadline,setDeadline] = useState("")
-    const [selectedFile,setSelectedFile] = React.useState(null);
 
-    const handleFileSelect = (e)=>{
-        setSelectedFile(e.target.files[0])
-        console.log(e.target.files[0])
-    }
+
     const handleSend = async(event)=>{
         event.preventDefault();
-        const formData = new FormData();
-        formData.append("selectedFile",selectedFile)
+        setSent(1)
         try{
             await axios.post("https://pace-akash.herokuapp.com/send_mail",{
+                //await axios.post("http://localhost:4000/send_mail",{
                 given_name: givenName,
                 email: email
             })
             .then(await axios.post("https://pace-akash.herokuapp.com/send_mail_admin",{
+                //.then(await axios.post("http://localhost:4000/send_mail_admin",{
                 given_name: givenName,
                 surname: surName,
                 email: email,
@@ -34,6 +31,13 @@ const MailingForm = ()=>{
                 title_of_assignment: titleOfAssignment,
                 assignment_description: description,
                 deadline: deadline
+            }).then((response)=>{
+                if(response.data==="success"){
+                    setSent(0)
+                }
+                else{
+                    setSent(5)
+                }
             }))
         }
         catch(error){
@@ -74,12 +78,14 @@ const MailingForm = ()=>{
                         <label htmlFor="deadline">Deadline<span style={{color:"slateblue"}}> *</span></label>
                         <input type="date" id="deadline" onChange={(e)=>setDeadline(e.target.value)} required/>
                     </div>
-                    <div className="mailing-form-row">
-                        <label htmlFor="document" className="file-input">{'Upload relevant file (Optional)'}</label>
-                        <input type="file" name="document" id="document" accept=".pdf,.doc,.docx,.jpg,.png" onChange={handleFileSelect}/>
-                    </div>
+                    <br></br>
                     <div className="mailing-form-row row-end">
-                        <button type="submit" className="mailing-form-btn">Submit</button>
+                        {sent === 0 ?
+                        <p>{'Yay! Your order has been placed.'}</p>
+                        :sent === 1 ? 
+                        <div className="mailing-form-spinner"></div> :
+                        <button type="submit" className="mailing-form-btn">{'place order'}</button>
+                        }
                     </div>
                     
                 </form>
