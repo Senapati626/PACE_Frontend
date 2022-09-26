@@ -96,7 +96,7 @@ const Home = ()=>{
                         <p className="home-section-txt-header">{'Do not take our word for it'}</p>
                     </div>
                     <div>
-                        <p className="home-section-txt-text">{"Don't trust reviews catered by writers? Check out our 100% genuine WhatsApp conversations and results screenshots. Necessary precautions have been taken to maintain privacy of our clients."}</p>
+                        <p className="home-section-txt-text">{"Don't trust reviews catered by writers? Why Should YOU!!! Check out our 100% genuine WhatsApp conversations and results screenshots. Necessary precautions have been taken to maintain privacy of our clients."}</p>
                     </div>
                     <div>
                         <Link to="/testimonials" className="home-section-link">Check Testimonials</Link>

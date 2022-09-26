@@ -9,7 +9,7 @@ export default function Testimonials(){
 
     return(
         <div className="tml-container">
-            <h2 className="tml-header">{'Have a glimpse at the kind of work we do'}</h2>
+            <h2 className="tml-header">{'Testimonials and Results'}</h2>
             <div className="tml-active-a">
                 <img src={currImg} alt="" ref={currentEle} className="tml-animate" id="currentImg"/>
             </div>

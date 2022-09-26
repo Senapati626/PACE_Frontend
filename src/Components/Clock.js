@@ -32,7 +32,7 @@ export default function Clock(){
                 </div>
                 <div className="clock-compass-marks">
                     <MdOutlineComputer onClick={()=>{setItemactive("test"); setPromptactive(false)}}></MdOutlineComputer>
-                    <span>{'Online Tests'}</span>
+                    <span>{'Exams'}</span>
                 </div>
                 <div className="clock-compass-marks">
                     <MdOutlineQuiz onClick={()=>{setItemactive("quiz");setPromptactive(false)}}></MdOutlineQuiz>
@@ -58,7 +58,7 @@ export default function Clock(){
                     <p style={{color:"#7bacd4"}}>{'Assignments'}</p>
                 </div>
                 <div className="clock-card-txt">
-                    <p>{'Our team manages the assignment and works with in-depth proficiency. The brief, learning ourcomes and rubrics will be followe extensively to give relevant and quality work.'}</p><br></br>
+                    <p>{'Our team manages the assignment and works with in-depth proficiency. The brief, learning ourcomes and rubrics will be followed extensively to give relevant and quality work.'}</p><br></br>
                     <p>{'Check our '}<Link to={"/samples"} style={{textDecoration:"none",color:"#7bacd4"}}>Samples</Link></p>
                 </div>
             </div>
@@ -67,7 +67,7 @@ export default function Clock(){
                     <img src={TestC} alt="tests"/>
                 </div>
                 <div className="clock-card-header">
-                    <p style={{color:"#a6f8bd"}}>{'Online Tests'}</p>
+                    <p style={{color:"#a6f8bd"}}>{'Exams'}</p>
                 </div>
                 <div className="clock-card-txt">
                     <p>{'Our experts have cracked some of the toughest entrance examinations in the world. Our unique approach, expertise and team work will take care of your exam worries. Send a sample with the date and time of exam and let us take care of it.'}</p>
@@ -85,7 +85,7 @@ export default function Clock(){
                 <div className="clock-card-txt">
                     <p>{'Our team has over a million hours of quiz taking experience. We know what works to get you through your quizzes. You can see numerous quiz screenshots on our testimonials page.'}</p>
                     <br></br>
-                    <p>{'Check our '}<Link to={"/samples"} style={{textDecoration:"none",color:"#ff725e"}}>Samples</Link></p>
+                    <p>{'Check '}<Link to={"/testimonials"} style={{textDecoration:"none",color:"#ff725e"}}>Testimonials</Link></p>
                 </div>
             </div>
             <div className={itemactive==="project" ? "clock-card" : "card-hide"}>
@@ -108,7 +108,7 @@ export default function Clock(){
                 </div>
                 <div className="clock-prompt-content">
                     <p><strong>{'Hi, Nancy here.'}</strong></p>
-                    <p>{'Click on the markings in the compass to check the kind of work we do.'}</p>
+                    <p>{'Click on the markings in the compass to check out our services.'}</p>
                     <button className="clock-prompt-btn" onClick={()=>setPromptactive(false)}>{'Okay'}</button>
                 </div>
             </div> : <div></div>}

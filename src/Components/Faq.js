@@ -21,6 +21,10 @@ export default function FAQs(){
                         <p className="faq-a">{'Yes, always. We understand how important the work is to you. We will make sure the deadline is met.'}</p>
                     </div>
                     <div className="faq-block">
+                        <p className="faq-q">{'How will you take my exam and quizzes?'}</p>
+                        <p className="faq-a">{'You will send us the question paper, and our experts will start solving. We will keep on sending you partially solved files and a final file before the end of your exam along with a plagiarism report. In case of quizzes, we will login onto your moodle and take the quiz for you. We always use VPN services for safety and privacy. You can also send us screenshots or photos of your questions which we will solve and answer you in real time.'}</p>
+                    </div>
+                    <div className="faq-block">
                         <p className="faq-q">{'Are there any discounts available?'}</p>
                         <p className="faq-a">{'Yes there are. We also have time to time promotional offers where you can redeem discounts on referrals.'}</p>
                     </div>

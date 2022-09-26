@@ -83,11 +83,11 @@
     letter-spacing: 3px;
     font-size: 30px;
     background: #11C2CF;
-    background: linear-gradient(to right, #90ebf2 0%, #f88cf1 100%);
+    background: linear-gradient(to right, #90ebf2 0%, #f88cf1 50%,#f88cf1 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 .footer-right-follow{

@@ -24,12 +24,10 @@ export default function Footer(){
             </div>
             <div className="footer-right">
                 <p className="footer-right-header">{'pace'}</p>
-                <p className="footer-right-address">5055 E Somerset Dr,<br/>Cornville, Arizona 86325,<br/>United States of America</p>
-                <p className="footer-right-follow">Follow Us On</p>
                 <ul className="footer-right-list">
                     <li style={{color:"#c8c8ff",borderBottom:"2px solid #c8c8ff"}}>LinkedIn</li>
                     <li style={{color:"#c8c8ff",borderBottom:"2px solid #c8c8ff"}}>Twitter</li>
-                    <li style={{color:"#c8c8ff",borderBottom:"2px solid #c8c8ff"}}>Facebook</li>
+                    <li style={{color:"#c8c8ff",borderBottom:"2px solid #c8c8ff"}}><a href="https://www.facebook.com/projectandcontentexperts" target="_blank" style={{textDecoration:"none",color:"#c8c8ff"}}>Facebook</a></li>
                 </ul>
             </div>
         </div>
